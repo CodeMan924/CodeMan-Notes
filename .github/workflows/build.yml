@@ -1,0 +1,24 @@
+name: Build Mac App
+on: [push]
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install packaging tools
+        run: |
+          pip install py2app
+      - name: Build App
+        run: |
+          py2applet --make-setup codeman_notes.py
+          python3 setup.py py2app
+      - name: Upload Finished App
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeman-notes-mac-app
+          path: dist/codeman_notes.app
