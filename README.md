@@ -1,3 +1,5 @@
 # CodeMan-Notes
-A classic notes app which you can save notes, open notes and more!
-Note: If you install directly from the raw files you will get the oldest version so please download from the releases tab!
+
+This is the download for mac devices. 
+
+Please note I use a Windows PC and have never tested the program please feel free to point out and bugs!
